@@ -1,0 +1,146 @@
+/* FFG Star Wars HUD Enhancements */
+
+.ffg-sw-hud-panel {
+  font-family: var(--font-primary);
+}
+
+/* Remove default Foundry window chrome padding */
+.ffg-sw-hud-panel .window-content {
+  padding: 0;
+  background: transparent;
+}
+
+/* Main container */
+.ffg-sw-hud-content {
+  background: rgba(10, 10, 15, 0.92);
+  border: 1px solid rgba(80, 130, 180, 0.4);
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0, 120, 220, 0.2);
+  overflow: hidden;
+}
+
+/* Header */
+.ffg-sw-hud-content .hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  background: rgba(20, 45, 70, 0.85);
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid rgba(80, 130, 180, 0.25);
+}
+
+.ffg-sw-hud-content .hud-header:hover {
+  background: rgba(30, 60, 90, 0.9);
+}
+
+.ffg-sw-hud-content .token-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #d0d8e0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
+}
+
+.ffg-sw-hud-content .hud-header i {
+  font-size: 10px;
+  color: #8899aa;
+}
+
+/* Collapsed state — hide header bottom border */
+.ffg-sw-hud-content.collapsed .hud-header {
+  border-bottom: none;
+}
+
+/* Body */
+.ffg-sw-hud-content .hud-body {
+  padding: 6px 8px;
+}
+
+/* Stat row */
+.ffg-sw-hud-content .stat-row {
+  margin-bottom: 6px;
+}
+
+.ffg-sw-hud-content .stat-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Stat label */
+.ffg-sw-hud-content .stat-label {
+  display: block;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #7888a0;
+  margin-bottom: 2px;
+}
+
+.ffg-sw-hud-content .stat-row.primary .stat-label {
+  color: #c07070;
+}
+
+.ffg-sw-hud-content .stat-row.secondary .stat-label {
+  color: #6090c0;
+}
+
+/* Stat controls row */
+.ffg-sw-hud-content .stat-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Stat value */
+.ffg-sw-hud-content .stat-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e8e8e8;
+  min-width: 60px;
+  text-align: center;
+}
+
+.ffg-sw-hud-content .stat-row.primary .stat-value {
+  color: #f0c0c0;
+}
+
+.ffg-sw-hud-content .stat-row.secondary .stat-value {
+  color: #b0d0f0;
+}
+
+/* Exceeded threshold — danger styling */
+.ffg-sw-hud-content .stat-row.exceeded .stat-value {
+  color: #ff4444;
+  text-shadow: 0 0 6px rgba(255, 50, 50, 0.5);
+}
+
+/* Adjust buttons */
+.ffg-sw-hud-content .adjust-btn {
+  width: 28px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid rgba(100, 120, 160, 0.4);
+  border-radius: 3px;
+  background: rgba(40, 50, 70, 0.7);
+  color: #c0c8d0;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 24px;
+  text-align: center;
+}
+
+.ffg-sw-hud-content .adjust-btn:hover {
+  background: rgba(60, 75, 110, 0.85);
+  border-color: rgba(120, 160, 220, 0.6);
+  color: #ffffff;
+}
+
+.ffg-sw-hud-content .adjust-btn:active {
+  background: rgba(80, 100, 140, 0.9);
+}

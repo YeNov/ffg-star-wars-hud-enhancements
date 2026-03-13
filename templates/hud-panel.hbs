@@ -1,0 +1,46 @@
+<div class="ffg-sw-hud-content {{#if collapsed}}collapsed{{/if}}">
+  <div class="hud-header" data-action="toggle-collapse">
+    <span class="token-name">{{tokenName}}</span>
+    <i class="fas {{#if collapsed}}fa-chevron-down{{else}}fa-chevron-up{{/if}}"></i>
+  </div>
+
+  {{#unless collapsed}}
+  <div class="hud-body">
+    {{#if hasData}}
+      {{!-- Primary stat: Wounds or Hull Trauma --}}
+      <div class="stat-row primary {{#if primary.exceeded}}exceeded{{/if}}">
+        <span class="stat-label">{{primary.label}}</span>
+        <div class="stat-controls">
+          {{#if canEdit}}
+          <button type="button" class="adjust-btn" data-action="adjust-stat"
+                  data-key="{{primary.key}}" data-delta="-1">-1</button>
+          {{/if}}
+          <span class="stat-value">{{primary.value}} / {{primary.max}}</span>
+          {{#if canEdit}}
+          <button type="button" class="adjust-btn" data-action="adjust-stat"
+                  data-key="{{primary.key}}" data-delta="1">+1</button>
+          {{/if}}
+        </div>
+      </div>
+
+      {{!-- Secondary stat: Strain or System Strain (hidden for minions) --}}
+      {{#if secondary}}
+      <div class="stat-row secondary {{#if secondary.exceeded}}exceeded{{/if}}">
+        <span class="stat-label">{{secondary.label}}</span>
+        <div class="stat-controls">
+          {{#if canEdit}}
+          <button type="button" class="adjust-btn" data-action="adjust-stat"
+                  data-key="{{secondary.key}}" data-delta="-1">-1</button>
+          {{/if}}
+          <span class="stat-value">{{secondary.value}} / {{secondary.max}}</span>
+          {{#if canEdit}}
+          <button type="button" class="adjust-btn" data-action="adjust-stat"
+                  data-key="{{secondary.key}}" data-delta="1">+1</button>
+          {{/if}}
+        </div>
+      </div>
+      {{/if}}
+    {{/if}}
+  </div>
+  {{/unless}}
+</div>
