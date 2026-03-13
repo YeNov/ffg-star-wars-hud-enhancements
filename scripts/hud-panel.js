@@ -130,14 +130,6 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
     const currentValue = foundry.utils.getProperty(actor, key);
     let newValue = Math.max(0, currentValue + delta);
 
-    // Clamp strain-type stats to their max
-    const isStrainType = key.includes("strain") || key.includes("systemStrain");
-    if (isStrainType) {
-      const statPath = key.replace(".value", "");
-      const maxValue = foundry.utils.getProperty(actor, statPath + ".max");
-      newValue = Math.min(newValue, maxValue);
-    }
-
     await actor.update({ [key]: newValue });
   }
 
