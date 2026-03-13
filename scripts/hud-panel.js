@@ -66,7 +66,7 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
     const type = actor.type;
     const stats = actor.system.stats;
     const isVehicle = type === "vehicle";
-    const isMinion = type === "minion";
+    const hasStrain = type !== "minion" && type !== "rival";
 
     let primary, secondary;
 
@@ -94,7 +94,7 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
         key: "system.stats.wounds.value",
         exceeded: stats.wounds.value > stats.wounds.max
       };
-      if (!isMinion) {
+      if (hasStrain) {
         secondary = {
           label: game.i18n.localize("ffg-sw-hud.strain"),
           value: stats.strain.value,
