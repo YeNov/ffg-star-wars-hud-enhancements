@@ -1,0 +1,9 @@
+{
+  "ffg-sw-hud.title": "Поранення та Втома",
+  "ffg-sw-hud.wounds": "Поранення",
+  "ffg-sw-hud.strain": "Втома",
+  "ffg-sw-hud.hull-trauma": "Пошкодження корпусу",
+  "ffg-sw-hud.system-strain": "Напруга систем",
+  "ffg-sw-hud.controls.toggle": "Перемкнути HUD Поранень/Втоми",
+  "ffg-sw-hud.warn.no-token": "Спочатку оберіть токен."
+}

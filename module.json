@@ -36,6 +36,12 @@
       "name": "English",
       "path": "lang/en.json",
       "flags": {}
+    },
+    {
+      "lang": "ua",
+      "name": "Ukrainian (Українська)",
+      "path": "lang/ua.json",
+      "flags": {}
     }
   ],
   "flags": {}
