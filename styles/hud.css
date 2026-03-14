@@ -26,13 +26,8 @@
   justify-content: space-between;
   padding: 5px 8px;
   background: rgba(20, 45, 70, 0.85);
-  cursor: pointer;
   user-select: none;
   border-bottom: 1px solid rgba(80, 130, 180, 0.25);
-}
-
-.ffg-sw-hud-content .hud-header:hover {
-  background: rgba(30, 60, 90, 0.9);
 }
 
 .ffg-sw-hud-content .token-name {
@@ -43,16 +38,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 170px;
-}
-
-.ffg-sw-hud-content .hud-header i {
-  font-size: 10px;
-  color: #8899aa;
-}
-
-/* Collapsed state — hide header bottom border */
-.ffg-sw-hud-content.collapsed .hud-header {
-  border-bottom: none;
 }
 
 /* Body */

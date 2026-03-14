@@ -18,8 +18,7 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
       minimizable: false
     },
     actions: {
-      "adjust-stat": WoundsStrainHUD.#onAdjustStat,
-      "toggle-collapse": WoundsStrainHUD.#onToggleCollapse
+      "adjust-stat": WoundsStrainHUD.#onAdjustStat
     }
   };
 
@@ -32,8 +31,6 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
   /** @type {Token|null} */
   _token = null;
 
-  /** @type {boolean} */
-  _collapsed = false;
 
   /**
    * Set the tracked token and render the HUD.
@@ -111,7 +108,6 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
       tokenName: this._token.name,
       primary,
       secondary: secondary ?? null,
-      collapsed: this._collapsed,
       canEdit: actor.testUserPermission(game.user, "OWNER")
     };
   }
@@ -133,13 +129,4 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
     await actor.update({ [key]: newValue });
   }
 
-  /**
-   * Toggle the collapsed state.
-   * @param {PointerEvent} event
-   * @param {HTMLElement} target
-   */
-  static async #onToggleCollapse(event, target) {
-    this._collapsed = !this._collapsed;
-    this.render({ force: false });
-  }
 }
