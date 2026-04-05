@@ -45,6 +45,22 @@
   padding: 6px 8px;
 }
 
+/* Soak row (read-only) */
+.ffg-sw-hud-content .soak-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 0;
+  margin-bottom: 4px;
+  border-bottom: 1px solid rgba(80, 130, 180, 0.15);
+}
+
+.ffg-sw-hud-content .soak-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: #c0b890;
+}
+
 /* Stat row */
 .ffg-sw-hud-content .stat-row {
   margin-bottom: 6px;

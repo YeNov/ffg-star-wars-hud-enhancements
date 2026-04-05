@@ -5,6 +5,14 @@
 
   <div class="hud-body">
     {{#if hasData}}
+      {{!-- Soak / Armor (read-only) --}}
+      {{#if soak}}
+      <div class="soak-row">
+        <span class="stat-label">{{soak.label}}</span>
+        <span class="soak-value">{{soak.value}}</span>
+      </div>
+      {{/if}}
+
       {{!-- Primary stat: Wounds or Hull Trauma --}}
       <div class="stat-row primary {{#if primary.exceeded}}exceeded{{/if}}">
         <span class="stat-label">{{primary.label}}</span>

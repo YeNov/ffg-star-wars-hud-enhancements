@@ -103,9 +103,14 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
       }
     }
 
+    const soak = isVehicle
+      ? { label: game.i18n.localize("ffg-sw-hud.armour"), value: stats.armour.value }
+      : { label: game.i18n.localize("ffg-sw-hud.soak"), value: stats.soak.value };
+
     return {
       hasData: true,
       tokenName: this._token.name,
+      soak,
       primary,
       secondary: secondary ?? null,
       canEdit: actor.testUserPermission(game.user, "OWNER")

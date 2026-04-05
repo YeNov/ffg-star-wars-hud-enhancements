@@ -4,6 +4,8 @@
   "ffg-sw-hud.strain": "Strain",
   "ffg-sw-hud.hull-trauma": "Hull Trauma",
   "ffg-sw-hud.system-strain": "System Strain",
+  "ffg-sw-hud.soak": "Soak",
+  "ffg-sw-hud.armour": "Armor",
   "ffg-sw-hud.controls.toggle": "Toggle Wounds/Strain HUD",
   "ffg-sw-hud.warn.no-token": "Select a token first."
 }
