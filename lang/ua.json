@@ -4,6 +4,8 @@
   "ffg-sw-hud.strain": "Втома",
   "ffg-sw-hud.hull-trauma": "Пошкодження корпусу",
   "ffg-sw-hud.system-strain": "Напруга систем",
+  "ffg-sw-hud.soak": "Поглинання",
+  "ffg-sw-hud.armour": "Броня",
   "ffg-sw-hud.controls.toggle": "Перемкнути HUD Поранень/Втоми",
   "ffg-sw-hud.warn.no-token": "Спочатку оберіть токен."
 }
