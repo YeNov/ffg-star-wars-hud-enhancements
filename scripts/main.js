@@ -7,7 +7,7 @@ Hooks.once("ready", () => {
 });
 
 Hooks.on("controlToken", (token, controlled) => {
-  if (!hudPanel) return;
+  if (!hudPanel || !hudPanel._enabled) return;
 
   const controlled_tokens = canvas.tokens.controlled;
   if (controlled_tokens.length > 0) {
@@ -18,7 +18,7 @@ Hooks.on("controlToken", (token, controlled) => {
 });
 
 Hooks.on("updateActor", (actor, changed, options, userId) => {
-  if (!hudPanel?._token) return;
+  if (!hudPanel?._enabled || !hudPanel._token) return;
   if (hudPanel._token.actor?.id !== actor.id) return;
   hudPanel.render({ force: false });
 });
@@ -36,14 +36,10 @@ Hooks.on("getSceneControlButtons", (controls) => {
     name: "ffg-sw-hud",
     title: game.i18n.localize("ffg-sw-hud.controls.toggle"),
     icon: "fas fa-heart-pulse",
-    button: true,
-    onChange: () => {
-      const token = canvas.tokens.controlled[0];
-      if (token) {
-        hudPanel.setToken(token);
-      } else {
-        ui.notifications.warn(game.i18n.localize("ffg-sw-hud.warn.no-token"));
-      }
+    toggle: true,
+    active: hudPanel?._enabled ?? true,
+    onChange: (event, active) => {
+      hudPanel.toggle();
     }
   };
 });

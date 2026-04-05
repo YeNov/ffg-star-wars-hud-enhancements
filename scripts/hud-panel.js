@@ -31,9 +31,11 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
   /** @type {Token|null} */
   _token = null;
 
+  /** @type {boolean} Whether the HUD is enabled via toggle */
+  _enabled = true;
 
   /**
-   * Set the tracked token and render the HUD.
+   * Set the tracked token and render the HUD (if enabled).
    * @param {Token} token
    */
   setToken(token) {
@@ -44,7 +46,7 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
     if (!game.user.isGM && !actor.testUserPermission(game.user, "OBSERVER")) return;
 
     this._token = token;
-    this.render({ force: true });
+    if (this._enabled) this.render({ force: true });
   }
 
   /**
@@ -53,6 +55,20 @@ export class WoundsStrainHUD extends HandlebarsApplicationMixin(ApplicationV2) {
   clearToken() {
     this._token = null;
     this.close();
+  }
+
+  /**
+   * Toggle the HUD on/off. When toggled off, the HUD closes.
+   * When toggled on, it opens for the current token if one is selected.
+   */
+  toggle() {
+    this._enabled = !this._enabled;
+    if (!this._enabled) {
+      this.close();
+    } else {
+      const token = canvas.tokens.controlled[0];
+      if (token) this.setToken(token);
+    }
   }
 
   /** @override */
